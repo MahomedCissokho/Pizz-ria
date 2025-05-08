@@ -1,5 +1,4 @@
-# 🍕 API Pizza avec EF Core & SQLite
-
+# 🍕 Pizzéria - API avec EF Core & SQLite
 ![Version](https://github.com/user-attachments/assets/845965e8-06de-4fa2-9ed3-e21398052271)
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -8,7 +7,11 @@
 
 ## 📋 Aperçu
 
-Cette API minimale ASP.NET Core permet de gérer une collection de pizzas avec persistance des données via SQLite et Entity Framework Core.
+Cette API minimale ASP.NET Core permet de gérer une collection de pizzas avec deux approches :
+- **Version initiale** (`pizz-ria-ef-core-memory`) : Utilisation d'une base de données en mémoire pour le développement rapide
+- **Version finale** (`pizz-ria-ef-core-sqlite`) : Migration vers SQLite pour une véritable persistance des données
+
+Le projet démontre l'évolution d'une application depuis un stockage temporaire en mémoire vers une solution complète avec persistance des données.
 
 ## 🚀 Fonctionnalités
 
@@ -26,18 +29,22 @@ Cette API minimale ASP.NET Core permet de gérer une collection de pizzas avec p
 - **Swagger/OpenAPI** - Documentation interactive de l'API
 - **Git** - Gestion de versions et branches
 
-## 🏗️ Structure du projet
+## 🏗️ Structure du projet Final
 
 ```
-API-Pizza/
+Pizzéria/
+├── Migrations/             # Fichiers de migration EF Core
 ├── Models/
-│   └── PizzaEhod.cs         # Modèle de données
-├── Data/
-│   └── PizzaEhodDB.cs       # Contexte EF Core 
-├── Migrations/              # Fichiers de migration EF Core
-├── Program.cs               # Point d'entrée et configuration
-├── appsettings.json         # Configuration de l'application
-└── Pizzas.db                # Base de données SQLite
+│   └── PizzaEhod.cs        # Modèle de données
+    └── PizzaEhodDB.cs          # Contexte EF Core 
+├── Properties/             # Propriétés du projet
+├── .gitattributes          # Configuration Git
+├── .gitignore              # Fichiers ignorés par Git
+├── appsettings.Development.json  # Configuration de développement
+├── appsettings.json        # Configuration de l'application
+├── Pizzas.db               # Base de données SQLite
+├── Pizzéria.csproj         # Fichier projet
+└── Program.cs              # Point d'entrée et configuration
 ```
 
 ## 🚦 Routes API
@@ -54,8 +61,8 @@ API-Pizza/
 
 1. **Cloner le dépôt**
    ```bash
-   git clone https://github.com/cisco/api-pizza.git
-   cd api-pizza
+   git clone https://github.com/MahomedCissokho/Pizz-ria.git
+   cd Pizz-ria
    ```
 
 2. **Restaurer les packages**
@@ -75,7 +82,7 @@ API-Pizza/
 
 5. **Accéder à Swagger**
    ```
-   Voir le port 
+   Voir le port affiché en sortie... 
    https://localhost:${port}/swagger
    ```
 
