@@ -4,9 +4,12 @@ using Pizzéria.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Ajout du contexte de base de données EF Core en mémoire
+// Configuration de la chaîne de connexion SQLite
+var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
+
+// Ajout du contexte de base de données EF Core avec SQLite
 builder.Services.AddDbContext<PizzaEhodDB>(options =>
-    options.UseInMemoryDatabase("items"));
+    options.UseSqlite(connectionString));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
