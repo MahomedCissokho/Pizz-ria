@@ -1,8 +1,6 @@
 # 🍕 API Pizza avec EF Core & SQLite
 
-![Version](![image](https://github.com/user-attachments/assets/845965e8-06de-4fa2-9ed3-e21398052271)
-)
-![Version]![image](https://github.com/user-attachments/assets/796727ac-5092-4424-88da-53c4a84329b2)
+![Version](https://github.com/user-attachments/assets/845965e8-06de-4fa2-9ed3-e21398052271)
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
